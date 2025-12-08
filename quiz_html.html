@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepa E-xam</title>
+    <link rel="stylesheet" href="quiz_css.css">
+        <!-- Lien vers les fichiers JavaScript -->
+    <script src="quiz_questions.js"></script>
+    <script src="quiz_app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Prepa E-xam</h1>
+        <div class="creator-info">Créé par Soro Nontie Emmanuel</div>
+        
+        <!-- Écran d'accueil -->
+        <div class="welcome-screen active">
+            <div id="returningUserMessage"></div>
+            <div class="input-group">
+                <label for="userName">Entrez votre nom :</label>
+                <input type="text" id="userName" placeholder="Votre nom complet">
+            </div>
+            <button onclick="startQuiz()">Commencer le Quiz</button>
+            <div id="historyDisplay"></div>
+        </div>
+
+        <!-- Écran de quiz -->
+        <div class="quiz-screen">
+            <div class="user-info">
+                <strong>Participant :</strong> <span id="displayName"></span>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div class="question-info">
+                <span>Question <span id="currentQuestion">1</span>/20</span>
+                <span>Score : <span id="currentScore">0</span></span>
+            </div>
+            
+            <div class="question-text" id="questionText"></div>
+            
+            <div class="options" id="optionsContainer"></div>
+            
+            <button onclick="nextQuestion()" id="nextBtn" style="display:none;">Question Suivante</button>
+        </div>
+
+        <!-- Écran de résultats -->
+        <div class="result-screen">
+            <h2>🎉 Quiz Terminé !</h2>
+            <div class="user-info">
+                <strong>Participant :</strong> <span id="finalName"></span>
+            </div>
+            <div class="score-display" id="finalScore"></div>
+            <div class="result-message" id="resultMessage"></div>
+            <button onclick="restartQuiz()">Nouveau Quiz</button>
+            <button onclick="viewHistory()" class="secondary">Voir l'historique</button>
+        </div>
+    </div>
+</body>
+</html>
